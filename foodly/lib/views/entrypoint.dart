@@ -2,10 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:foodly/constants/constants.dart';
 import 'package:foodly/controllers/tab_index_controller.dart';
+import 'package:foodly/views/cart/cart_page.dart';
+import 'package:foodly/views/home/home_page.dart';
+import 'package:foodly/views/profile/profile_page.dart';
+import 'package:foodly/views/search/search_page.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+  MainScreen({super.key});
+
+  List<Widget> pageList = const [
+    HomePage(),
+    SearchPage(),
+    CartPage(),
+    ProfilePage()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +26,9 @@ class MainScreen extends StatelessWidget {
       () => Scaffold(
         body: Stack(
           children: [
-            Container(
-              height: height,
-              width: width,
-              color: kOffWhite,
-            ),
+
+            pageList[controller.tabIndex],
+            
             Align(
               alignment: Alignment.bottomCenter,
               child: Theme(
@@ -46,10 +56,12 @@ class MainScreen extends StatelessWidget {
                           icon: Icon(Icons.search), label: 'Search'),
                       const BottomNavigationBarItem(
                           icon: Badge(
-                            label: Text("1"),
+                            label: Text("8"),
                             child: Icon(FontAwesome.opencart)), label: 'Cart'),
-                      const BottomNavigationBarItem(
-                          icon: Icon(Icons.person), label: 'Profile'),
+                      BottomNavigationBarItem(
+                          icon: controller.tabIndex == 3
+                          ? const Icon(FontAwesome.user_circle)
+                          : const Icon(FontAwesome.user_circle_o), label: 'Profile'),
                     ],
                   )),
             ),
