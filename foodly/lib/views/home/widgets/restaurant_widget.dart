@@ -46,7 +46,7 @@ class RestaurantWidget extends StatelessWidget {
                         height: 112.h,
                         width: width * .8,
                         child: Image.network(
-                          image!,
+                          image??'',
                           fit: BoxFit.fitWidth,
                         ),
                       ),
