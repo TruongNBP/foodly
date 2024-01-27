@@ -11,7 +11,7 @@ class CategoryPage extends StatelessWidget {
         elevation: 0,
         backgroundColor: kOffWhite,
       ),
-      body: Center(
+      body: const Center(
         child: Text("Category Page"),
       ),
     );

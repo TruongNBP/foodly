@@ -5,9 +5,7 @@ import 'package:foodly/common/back_ground_container.dart';
 import 'package:foodly/common/reusable_text.dart';
 import 'package:foodly/constants/constants.dart';
 import 'package:foodly/constants/uidata.dart';
-import 'package:foodly/views/categories/category_page.dart';
 import 'package:foodly/views/categories/widget/category_title.dart';
-import 'package:get/get.dart';
 
 class AllCategories extends StatelessWidget {
   const AllCategories({super.key});

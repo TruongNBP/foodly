@@ -14,6 +14,7 @@ class CategoryWidget extends StatelessWidget {
     required this.category,
   });
 
+  // ignore: prefer_typing_uninitialized_variables
   var category;
 
   @override

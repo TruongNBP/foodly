@@ -6,12 +6,14 @@ import 'package:foodly/constants/constants.dart';
 import 'package:foodly/views/categories/category_page.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class CategoryTitle extends StatelessWidget {
   CategoryTitle({
     super.key,
     required this.category,
   });
 
+  // ignore: prefer_typing_uninitialized_variables
   var category;
 
   @override

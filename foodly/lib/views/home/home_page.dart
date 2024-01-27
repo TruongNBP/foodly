@@ -8,6 +8,8 @@ import 'package:foodly/views/home/all_fastest_foods.dart';
 import 'package:foodly/views/home/all_nearby_restaurants.dart';
 import 'package:foodly/views/home/recommendations_page.dart';
 import 'package:foodly/views/home/widgets/category_list.dart';
+import 'package:foodly/views/home/widgets/foods_list.dart';
+import 'package:foodly/views/home/widgets/nearby_restaurants_list.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,6 +22,7 @@ class HomePage extends StatelessWidget {
         // ignore: sized_box_for_whitespace
         appBar: PreferredSize(
             preferredSize: Size.fromHeight(130.h),
+            // ignore: sized_box_for_whitespace
             child: Container(
               height: 120,
               child: const CustomAppBar(),
@@ -38,6 +41,7 @@ class HomePage extends StatelessWidget {
                 );
               },
             ),
+            const NearbyRestaurants(),
             Heading(
               text: "Try Something New",
               onTap: () {
@@ -47,6 +51,7 @@ class HomePage extends StatelessWidget {
                 );
               },
             ),
+            const FoodsList(),
             Heading(
               text: "Fastest food closer to you",
               onTap: () {
@@ -56,6 +61,7 @@ class HomePage extends StatelessWidget {
                 );
               },
             ),
+            const FoodsList(),
           ],
         ))));
   }
